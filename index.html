@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>blog test</title>
+<title>fugly blog test</title>
 </head>
 <body>
 
-<h1>This blog is under construction</h1>
+<h1>This fugly blog is under construction</h1>
 
 <a href="#post1">base64</a>
 <br>
 <a href="#post2">clipboard</a>
+<br>
+<a href="#post3">terminal</a>
 
 <h2 id="post1">vim scripts for handling base64</h2>
 
@@ -49,7 +51,7 @@ endfunction
 </pre>
 
 <p>
-The functions are pretty simple (and probably could be one-liners): I yank the visual selection, pass it to the system base64, and the output is pasted in a new window. As usual with vimscripts, the used unnamed register is restored to its previous value (this way we don't replace a previous yank).
+The functions are pretty simple (and probably could be one-liners): I yank the visual selection, pass it to the system's base64, and the output is pasted in a new window. As usual with vimscripts, the used unnamed register is restored to its previous value (this way we don't replace a previous yank).
 </p>
 
 <p>
@@ -75,6 +77,14 @@ endfunction
 
 </code>
 </pre>
+
+<h2 id="post3">vim terminal</h2>
+
+<p>
+While in vim's terminal (launched with :terminal), you can move around through the terminal output by going into Normal mode, with C-w,N
+<br>
+This is particularly useful to search and yank.
+</p>
 
 </body>
 </html>
