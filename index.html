@@ -1,1 +1,80 @@
-Under construction!
+<!DOCTYPE html>
+<html>
+<head>
+<title>blog test</title>
+</head>
+<body>
+
+<h1>This blog is under construction</h1>
+
+<a href="#post1">base64</a>
+<br>
+<a href="#post2">clipboard</a>
+
+<h2 id="post1">vim scripts for handling base64</h2>
+
+<p>
+I have been working with files that contain base64 encoded data that I need to view and edit.
+</p>
+
+<p>
+I was pretty tired of running "base64" at the command line all the time, so I came up with a simple vimscript.
+</p>
+
+<p>
+Basically what I do is visual select the text I want to encode/decode, and then call the following (mapped) functions to decode or encode the selection.
+</p>
+
+<pre>
+<code>
+vnoremap &#x3C;leader&#x3E;bsd :&#x3C;c-u&#x3E;call &#x3C;SID&#x3E;BaseDecoder()&#x3C;cr&#x3E;
+vnoremap &#x3C;leader&#x3E;bse :&#x3C;c-u&#x3E;call &#x3C;SID&#x3E;BaseEncoder()&#x3C;cr&#x3E;
+
+function! s:BaseDecoder()
+    let saved_unnamed_register = @@
+    normal! &#x60;&#x3C;v&#x60;&#x3E;y
+    let @@ = system(&#x22;base64 -d&#x22;, getreg(&#x22;&#x22;))
+    set splitright | vnew | normal! p
+    let @@ = saved_unnamed_register
+endfunction
+
+function! s:BaseEncoder()
+    let saved_unnamed_register = @@
+    normal! &#x60;&#x3C;v&#x60;&#x3E;y
+    let @@ = system(&#x22;base64 -w 0&#x22;, getreg(&#x22;&#x22;))
+    set splitright | vnew | normal! p
+    let @@ = saved_unnamed_register
+endfunction
+</code>
+</pre>
+
+<p>
+The functions are pretty simple (and probably could be one-liners): I yank the visual selection, pass it to the system base64, and the output is pasted in a new window. As usual with vimscripts, the used unnamed register is restored to its previous value (this way we don't replace a previous yank).
+</p>
+
+<p>
+There are probably plugins out there that already do this better, but I find it pretty satisfying to play with these little scripts.
+</p>
+
+<h2 id="post2">vim copy to clipboard</h2>
+
+<p>
+This is how I copy visual selected text to the clipboard:
+</p>
+
+<pre>
+<code>
+vnoremap &#x3C;F9&#x3E; :&#x3C;c-u&#x3E;call &#x3C;SID&#x3E;CopyToClipboard()&#x3C;cr&#x3E;
+
+function! s:CopyToClipboard()
+    let saved_unnamed_register = @@
+    normal! &#x60;&#x3C;v&#x60;&#x3E;y
+    call system(&#x22;xclip -sel clipboard&#x22;, getreg(&#x22;&#x22;))
+    let @@ = saved_unnamed_register
+endfunction
+
+</code>
+</pre>
+
+</body>
+</html>
