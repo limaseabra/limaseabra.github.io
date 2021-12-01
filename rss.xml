@@ -6,16 +6,19 @@
   <link>https://limaseabra.github.io/</link>
   <description>This fugly blog is under construction</description>
   <item>
+    <guid isPermaLink="false">82dd4cc5-70c4-4f4e-bf2a-c09f183b2797</guid>
     <title>base64</title>
     <link>https://limaseabra.github.io/#post1</link>
     <description>vim scripts for handling base64</description>
   </item>
   <item>
+    <guid isPermaLink="false">8db52656-59f9-41a9-ab24-94e0832f1a3a</guid>
     <title>clipboard</title>
     <link>https://limaseabra.github.io/#post2</link>
     <description>vim copy to clipboard</description>
   </item>
   <item>
+    <guid isPermaLink="false">20265f05-d97c-4111-b356-9262798e0ef3</guid>
     <title>terminal</title>
     <link>https://limaseabra.github.io/#post3</link>
     <description>vim scripts for handling base64</description>
