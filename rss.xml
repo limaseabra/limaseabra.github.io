@@ -23,6 +23,13 @@
     <link>https://limaseabra.github.io/#post3</link>
     <description>vim scripts for handling base64</description>
   </item>
+  <item>
+    <guid isPermaLink="false">2f2103c4-c324-490b-ba13-59b69e1e638c</guid>
+    <title>pipe</title>
+    <link>https://limaseabra.github.io/#post4</link>
+    <description>pipe to vim</description>
+  </item>
+
 </channel>
 
 </rss>
