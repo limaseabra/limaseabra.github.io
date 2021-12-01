@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>fugly blog test</title>
+  <link>https://limaseabra.github.io/</link>
+  <description>This fugly blog is under construction</description>
+  <item>
+    <title>base64</title>
+    <link>https://limaseabra.github.io/#post1</link>
+    <description>vim scripts for handling base64</description>
+  </item>
+  <item>
+    <title>clipboard</title>
+    <link>https://limaseabra.github.io/#post2</link>
+    <description>vim copy to clipboard</description>
+  </item>
+  <item>
+    <title>terminal</title>
+    <link>https://limaseabra.github.io/#post3</link>
+    <description>vim scripts for handling base64</description>
+  </item>
+</channel>
+
+</rss>
